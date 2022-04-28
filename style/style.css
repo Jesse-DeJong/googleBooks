@@ -1,0 +1,8 @@
+.searchArea {
+  display: flex;
+  justify-content: center;
+}
+
+.form__input {
+  margin: 1px;
+}

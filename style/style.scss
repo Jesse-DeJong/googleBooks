@@ -1,0 +1,12 @@
+
+
+.searchArea {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    &__input {
+        margin: 1px;
+    }
+}
