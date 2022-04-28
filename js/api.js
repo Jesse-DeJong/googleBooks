@@ -1,4 +1,4 @@
-import { form } from './dom.js';
+import { form, results, createCard, clearDom } from './dom.js';
 
 const fetchRequest = async (bookTitle) => {
     // Take in search paramaters
@@ -8,24 +8,28 @@ const fetchRequest = async (bookTitle) => {
     // Parse the response into JSON
     const json = await response.json();
     // Return the JSON data
-    // console.log(json);
     return json;
 }
 
 const handleFormSubmission = async (e) => {
     // Prevent default form behaviour
     e.preventDefault();
+    // Remove the previous search results
+    clearDom(results);
 
     // Create FormData object from user input to the page
     const userInput = new FormData(form);
     // Pull out individual fields for query string construction
     // Format userinput for API (spaces replaced by %20)
     const bookTitle = userInput.get("title").split(" ").join("%20");
-    console.log(bookTitle);
-    
-    const data = await fetchRequest(bookTitle);
-    console.log(data);
 
+    // Make the FETCH request
+    const data = await fetchRequest(bookTitle);
+    // Extract useful part of the returned object
+    const resultData = data.items.map( (items) => items.volumeInfo )
+    
+    // console.log(resultData);
+    resultData.map( (book) => createCard("h2", book.title, results));
 
     
 }
