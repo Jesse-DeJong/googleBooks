@@ -1,17 +1,11 @@
 import { form, results, createCard, clearDom } from './dom.js';
 
-const fetchRequest = async (bookTitle) => {
-    // Take in search paramaters
-    const searchTerms = bookTitle;
-    // Execute the query string
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerms}`)
-    // Parse the response into JSON
-    const json = await response.json();
-    // Return the JSON data
-    return json;
+const fetchRequest = async (searchTerms) => {
+    // FETCH the user query from the API, parse the response into JSON and return it
+    return await (await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerms}`)).json();
 }
 
-const handleFormSubmission = async (e) => {
+const handleFormSubmission = async (e, pageIndex) => {
     // Prevent default form behaviour
     e.preventDefault();
     // Remove the previous search results
@@ -23,11 +17,19 @@ const handleFormSubmission = async (e) => {
     // Format userinput for API (spaces replaced by %20)
     const bookTitle = userInput.get("title").split(" ").join("%20");
 
+    // IF trigger for first run where no pageIndex is defined
+    if (!pageIndex) {
     // Make the FETCH request
     const data = await fetchRequest(bookTitle);
+    console.log(data);
+    return data;
+    }
+    // Followup FETCH request for additional results
+    const data = await fetchRequest(`${bookTitle}&startIndex=${pageIndex}`);
+
     // Extract useful part of the returned object
     const resultData = data.items.map( (items) => items.volumeInfo )
-    
+
     console.log(resultData);
     resultData.map( (book) => createCard(
         book.imageLinks.thumbnail,

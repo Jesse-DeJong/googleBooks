@@ -6,6 +6,7 @@ const _ = null;
 //
 const form = document.getElementById("form");
 const results = document.getElementById("results");
+const moreButton = document.getElementById("more");
 const searchButton = document.getElementById("search");
 
 // HTML constructor function
@@ -16,35 +17,36 @@ const createCard = (image, title, authors, description) => {
     outerDiv.setAttribute("class", "card");
 
         // IMAGE containing the book cover        
-        elementCreator("img", _, outerDiv, "src", image)
+        elementCreator("img", _, outerDiv, image, "src");
     
         // TITLE containing the books title
-        elementCreator("h2", title, outerDiv, "class", "card__title");
+        elementCreator("h2", title, outerDiv, "card__title");
     
         // AUTHORS containing a list of all authors
         const listElement = document.createElement("ul");
             // MAP authors array and append an LI for each to the UL
             authors.map( (author) => {
-                elementCreator("li", author, listElement, "class", "card__listItem");
+                elementCreator("li", author, listElement, "card__listItem");
             })
             outerDiv.appendChild(listElement);
         
         // DESCRIPTION containing the provided description
-        elementCreator("p", description, outerDiv, "class", "card__description");
+        elementCreator("p", description, outerDiv, "card__description");
 
     // Append completed Card to the DOM
     results.appendChild(outerDiv);
+
 };
 
 
 
 // Reusable function for element creation including assignment of necessary attributes (class)
-const elementCreator = (type, text, parent, attribute, className) => {
+const elementCreator = (type, text, parent, className, attribute = "class") => {
     const newElement = document.createElement(type);
-    if (text) {
-    const textNode = document.createTextNode(text);
-    newElement.appendChild(textNode);
-    }
+        if (text) {
+        const textNode = document.createTextNode(text);
+        newElement.appendChild(textNode);
+        }
     parent.appendChild(newElement);
 
     newElement.setAttribute(attribute, className);
@@ -62,6 +64,7 @@ const clearDom = (parent) => {
 export {
     form,
     results,
+    moreButton,
     searchButton,
     clearDom,
     createCard
