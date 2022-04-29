@@ -1,3 +1,20 @@
+/* Screensize */
+$mobile: 500px;
+$tablet: 900px;
+$desktop: 901px;
+
+#results {
+    @media only screen and (min-width: $desktop) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+#results img {
+    max-width: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
 
 
 .searchArea {
@@ -6,7 +23,15 @@
 }
 
 .form {
+
+
     &__input {
         margin: 1px;
     }
+}
+
+.card {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
 }

@@ -1,3 +1,18 @@
+/* Screensize */
+@media only screen and (min-width: 901px) {
+  #results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+#results img {
+  max-width: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 .searchArea {
   display: flex;
   justify-content: center;
@@ -5,4 +20,10 @@
 
 .form__input {
   margin: 1px;
+}
+
+.card {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
 }
