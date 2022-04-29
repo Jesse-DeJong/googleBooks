@@ -28,8 +28,14 @@ const handleFormSubmission = async (e) => {
     // Extract useful part of the returned object
     const resultData = data.items.map( (items) => items.volumeInfo )
     
-    // console.log(resultData);
-    resultData.map( (book) => createCard("h2", book.title, results));
+    console.log(resultData);
+    resultData.map( (book) => createCard(
+        book.imageLinks.thumbnail,
+        book.title,
+        book.authors,
+        book.description
+        )
+    );
 
     
 }
