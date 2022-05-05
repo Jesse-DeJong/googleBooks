@@ -1,16 +1,24 @@
 /* Screensize */
-@media only screen and (min-width: 901px) {
+@media only screen and (max-width: 500px) {
   #results {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
   }
 }
-
-#results img {
-  max-width: 200px;
-  object-fit: cover;
-  border-radius: 5px;
+@media only screen and (min-width: 500px) and (max-width: 901px) {
+  #results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+  }
+}
+@media only screen and (min-width: 901px) {
+  #results {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
 }
 
 .searchArea {
@@ -26,4 +34,15 @@
   border: 1px solid black;
   margin: 5px;
   padding: 5px;
+  max-height: 600px;
+}
+.card__description {
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#results img {
+  object-fit: cover;
+  border-radius: 5px;
 }

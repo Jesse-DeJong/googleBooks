@@ -31,10 +31,10 @@ const handleFormSubmission = async (e) => {
 
     // Render the data for each book to the DOM
     resultData.map( (book) => createCard(
-        book.imageLinks.thumbnail,
-        book.title,
-        book.authors,
-        book.description
+        book.imageLinks.thumbnail || "https://www.josco.com.au/wp-content/uploads/2016/05/Image-Unavailable.jpg",
+        book.title || "No title available",
+        book.authors || "No author(s) available",
+        book.description || "No description available"
         )
     );
 }

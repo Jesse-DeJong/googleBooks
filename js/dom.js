@@ -1,8 +1,6 @@
 // Imports
 // import { fetchRequest } from './api';
 
-// 
-const _ = null;
 //
 const form = document.getElementById("form");
 const results = document.getElementById("results");
@@ -17,10 +15,10 @@ const createCard = (image, title, authors, description) => {
     outerDiv.setAttribute("class", "card");
 
         // IMAGE containing the book cover        
-        elementCreator("img", _, outerDiv, image, "src");
+        elementCreator("img", null, outerDiv, image, "src");
     
         // TITLE containing the books title
-        elementCreator("h2", title, outerDiv, "card__title");
+        elementCreator("h5", title, outerDiv, "card__title");
     
         // AUTHORS containing a list of all authors
         const listElement = document.createElement("ul");
