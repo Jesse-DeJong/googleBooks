@@ -10,7 +10,7 @@
   #results {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 1fr);
   }
 }
 @media only screen and (min-width: 901px) {
@@ -19,11 +19,6 @@
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr 1fr;
   }
-}
-
-#googleLogo {
-  max-width: 30%;
-  margin-bottom: 5px;
 }
 
 .searchArea {
@@ -37,19 +32,42 @@
   border-radius: 10px;
 }
 
-.hideMore {
-  opacity: 0;
+#googleLogo {
+  max-width: 30%;
+  margin-bottom: 5px;
 }
 
 .form__input {
   padding: 5px;
 }
 
+.hideMore {
+  opacity: 0;
+}
+
 .card {
   margin: 5px;
-  max-height: 600px;
+}
+@media only screen and (max-width: 500px) {
+  .card {
+    max-height: 100vh;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 901px) {
+  .card {
+    max-height: 50vh;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .card {
+    max-height: 75vh;
+  }
+}
+.card__title {
+  padding: 0px 5px;
 }
 .card__description {
+  padding: 0px 5px;
   white-space: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -57,5 +75,5 @@
 
 #results img {
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 5px 5px 0px 0px;
 }
