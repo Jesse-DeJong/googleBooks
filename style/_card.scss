@@ -1,0 +1,30 @@
+@import "size";
+
+// API Result
+.card {
+    margin: 5px;
+
+    @media only screen and (max-width: $mobile) {
+        max-height: 100vh;
+    }
+    @media only screen and (min-width: $mobile) and (max-width: $desktop) {
+        max-height: 50vh;
+    }
+    @media only screen and (min-width: $desktop) {
+        max-height: 75vh;
+    }
+
+    &__title {
+        padding: 0px 5px;
+    }
+    &__description {
+        padding: 0px 5px;
+        white-space: wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+#results img {
+    object-fit: cover;
+    border-radius: 5px 5px 0px 0px;
+}

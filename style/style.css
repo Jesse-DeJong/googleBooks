@@ -21,30 +21,7 @@
   }
 }
 
-.searchArea {
-  background-image: url("https://foodtank.com/wp-content/uploads/2021/07/alfons-morales-YLSwjSy7stw-unsplash.jpg");
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 2% 10%;
-  padding: 2%;
-  border-radius: 10px;
-}
-
-#googleLogo {
-  max-width: 30%;
-  margin-bottom: 5px;
-}
-
-.form__input {
-  padding: 5px;
-}
-
-.hideMore {
-  opacity: 0;
-}
-
+/* Screensize */
 .card {
   margin: 5px;
 }
@@ -76,4 +53,28 @@
 #results img {
   object-fit: cover;
   border-radius: 5px 5px 0px 0px;
+}
+
+.searchArea {
+  background-image: url("https://foodtank.com/wp-content/uploads/2021/07/alfons-morales-YLSwjSy7stw-unsplash.jpg");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2% 10%;
+  padding: 2%;
+  border-radius: 10px;
+}
+
+#googleLogo {
+  max-width: 30%;
+  margin-bottom: 5px;
+}
+
+.form__input {
+  padding: 5px;
+}
+
+.hideMore {
+  opacity: 0;
 }
