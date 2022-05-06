@@ -1,4 +1,4 @@
-import { form, results, createCard, clearDom } from './dom.js';
+import { form, results, createCard, clearDom, searchMore } from './dom.js';
 
 let pageIndex = 0;
 
@@ -14,6 +14,7 @@ const handleFormSubmission = async (e) => {
     // Allows the func to be reused for additional serachs when MORE is pressed 
     if(e.target.id === "search") {
         clearDom(results);
+        searchMore.classList.remove("hideMore");
     };
     
     // Create FormData object from user input to the page
@@ -37,6 +38,9 @@ const handleFormSubmission = async (e) => {
         book.description || "No description available"
         )
     );
+
+
+
 }
 
 export {

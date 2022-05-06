@@ -21,25 +21,36 @@ $desktop: 901px;
     }
 }
 
-
+#googleLogo {
+    max-width: 30%;
+    margin-bottom: 5px;
+}
 
 .searchArea {
+    background-image: url("https://foodtank.com/wp-content/uploads/2021/07/alfons-morales-YLSwjSy7stw-unsplash.jpg");
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin: 2% 10%;
+    padding: 2%;
+    border-radius: 10px;
+}
+.hideMore {
+    opacity: 0;
 }
 
 .form {
-
-
     &__input {
-        margin: 1px;
+        padding: 5px;
     }
 }
 
 .card {
-    border: 1px solid black;
+    // border: 1px solid black;
     margin: 5px;
-    padding: 5px;
+    // padding: 5px;
 
     max-height: 600px;
 

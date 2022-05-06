@@ -6,6 +6,7 @@ const form = document.getElementById("form");
 const results = document.getElementById("results");
 const moreButton = document.getElementById("more");
 const searchButton = document.getElementById("search");
+const searchMore = document.getElementById("searchMore");
 
 // HTML constructor function
 const createCard = (image, title, authors, description) => {
@@ -33,7 +34,6 @@ const createCard = (image, title, authors, description) => {
 
     // Append completed Card to the DOM
     results.appendChild(outerDiv);
-
 };
 
 
@@ -64,6 +64,7 @@ export {
     results,
     moreButton,
     searchButton,
+    searchMore,
     clearDom,
     createCard
 }
